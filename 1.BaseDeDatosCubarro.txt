@@ -1,0 +1,336 @@
+create database cubarro;
+use cubarro;
+
+CREATE TABLE `cargo` (
+  `id_cargo` int(11) NOT NULL,
+  `cargo` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cargo`
+--
+
+INSERT INTO `cargo` (`id_cargo`, `cargo`) VALUES
+(1, 'administrador'),
+(2, 'usuario');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `instrumento`
+--
+
+CREATE TABLE `instrumento` (
+  `instrumentosNombre` varchar(25) NOT NULL,
+  `existencia` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `instrumento`
+--
+
+INSERT INTO `instrumento` (`instrumentosNombre`, `existencia`) VALUES
+('Arpa', 5),
+('Maracas', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `instrumentos_actualizados`
+--
+
+CREATE TABLE `instrumentos_actualizados` (
+  `id_anterior` int(11) DEFAULT NULL,
+  `nom_prod_anterior` varchar(25) DEFAULT NULL,
+  `existenciaanterior` int(11) DEFAULT NULL,
+  `nuevo_id` varchar(5) DEFAULT NULL,
+  `nuevo_nom` varchar(25) DEFAULT NULL,
+  `nuevo_existencia` int(5) DEFAULT NULL,
+  `insertado` datetime DEFAULT NULL,
+  `usuario` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `instrumentos_actualizados`
+--
+
+INSERT INTO `instrumentos_actualizados` (`id_anterior`, `nom_prod_anterior`, `existenciaanterior`, `nuevo_id`, `nuevo_nom`, `nuevo_existencia`, `insertado`, `usuario`) VALUES
+(1, 'Arpa', 100, '1', 'Arpa', 10, '2023-01-12 11:42:46', 'root@localhost'),
+(3, 'no', 3, '3', 'no', 0, '2023-01-12 12:08:33', 'root@localhost'),
+(3, 'no', 0, '3', 'cuatro', 0, '2023-01-16 20:45:55', 'root@localhost'),
+(1, 'Arpa', 10, '1', 'Arpa', 9, '2023-01-18 16:01:33', 'root@localhost'),
+(2, 'maracas', 4, '2', 'maracas', 3, '2023-01-18 16:09:56', 'root@localhost'),
+(1, 'Arpa', 9, '1', 'Arpa', 8, '2023-01-18 16:11:00', 'root@localhost'),
+(1, 'Arpa', 8, '1', 'Arpa', 9, '2023-01-18 16:11:32', 'root@localhost'),
+(1, 'Arpa', 9, '1', 'Arpa', 8, '2023-01-18 16:12:49', 'root@localhost'),
+(1, 'Arpa', 8, '1', 'Arpa', 7, '2023-01-18 16:12:54', 'root@localhost'),
+(1, 'Arpa', 7, '1', 'Arpa', 6, '2023-01-18 16:13:38', 'root@localhost'),
+(2, 'maracas', 3, '2', 'maracas', 2, '2023-01-18 16:16:48', 'root@localhost'),
+(2, 'maracas', 2, '2', 'maracas', 1, '2023-01-26 12:53:30', 'root@localhost'),
+(2, 'maracas', 1, '2', 'maracas', 0, '2023-01-26 12:54:50', 'root@localhost'),
+(2, 'maracas', 0, '2', 'maracas', 10, '2023-01-26 12:56:24', 'root@localhost'),
+(3, 'cuatro', 0, '3', 'cuatro', 9, '2023-01-26 12:56:33', 'root@localhost'),
+(2, 'maracas', 10, '2', 'maracas', 9, '2023-01-26 13:02:56', 'root@localhost'),
+(2, 'maracas', 9, '2', 'maracas', 8, '2023-01-26 13:04:16', 'root@localhost'),
+(2, 'maracas', 8, '2', 'maracas', 7, '2023-02-01 20:39:31', 'root@localhost'),
+(2, 'maracas', 7, '2', 'maracas', 6, '2023-02-01 20:48:28', 'root@localhost'),
+(2, 'maracas', 6, '2', 'maracas', 5, '2023-02-01 20:48:39', 'root@localhost'),
+(2, 'maracas', 5, '2', 'maracas', 4, '2023-02-01 20:48:41', 'root@localhost'),
+(2, 'maracas', 4, '2', 'maracas', 3, '2023-02-01 20:49:18', 'root@localhost'),
+(2, 'maracas', 3, '2', 'maracas', 2, '2023-02-01 20:49:21', 'root@localhost'),
+(2, 'maracas', 2, '2', 'maracas', 12, '2023-02-01 20:49:44', 'root@localhost'),
+(2, 'maracas', 12, '2', 'maracas', 13, '2023-02-01 20:51:55', 'root@localhost'),
+(2, 'maracas', 13, '2', 'maracas', 14, '2023-02-01 20:52:11', 'root@localhost'),
+(2, 'maracas', 14, '2', 'maracas', 15, '2023-02-01 20:52:30', 'root@localhost'),
+(2, 'maracas', 15, '2', 'maracas', 16, '2023-02-01 20:53:45', 'root@localhost'),
+(2, 'maracas', 16, '2', 'maracas', 17, '2023-02-01 20:54:33', 'root@localhost'),
+(1, 'Arpa', 6, '1', 'Arpa', 5, '2023-02-01 20:55:27', 'root@localhost'),
+(1, 'Arpa', 5, '1', 'Arpa', 6, '2023-02-01 20:56:04', 'root@localhost'),
+(1, 'Arpa', 6, '1', 'Arpa', 5, '2023-02-13 19:38:24', 'root@localhost'),
+(1, 'Arpa', 5, '1', 'Arpa', 6, '2023-02-13 19:38:38', 'root@localhost');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prestamos`
+--
+
+CREATE TABLE `prestamos` (
+  `id_prestamo` int(11) NOT NULL,
+  `instrumentosNombre` varchar(25) NOT NULL,
+  `email` varchar(25) NOT NULL,
+  `fechaPeticion` datetime NOT NULL,
+  `proceso` varchar(25) NOT NULL,
+  `fechaValidacion` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `prestamos`
+--
+
+INSERT INTO `prestamos` (`id_prestamo`, `instrumentosNombre`, `email`, `fechaPeticion`, `proceso`, `fechaValidacion`) VALUES
+(1, 'Arpa', 'dilanicolas040@gmail.com', '2023-03-21 07:19:39', 'validando', '2023-03-21 07:19:39'),
+(2, 'Arpa', 'messi@gmail.com', '2023-03-21 07:20:30', 'validando', '2023-03-21 07:20:30');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prestamos_eliminados`
+--
+
+CREATE TABLE `prestamos_eliminados` (
+  `id_prestamo` int(11) NOT NULL,
+  `id_instrumento` int(11) NOT NULL,
+  `email` varchar(25) DEFAULT NULL,
+  `fechaPeticion` datetime DEFAULT NULL,
+  `proceso` varchar(25) DEFAULT NULL,
+  `fechaValidacion` datetime DEFAULT NULL,
+  `usuario` varchar(20) DEFAULT NULL,
+  `fecha_eliminación` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `prestamos_eliminados`
+--
+
+INSERT INTO `prestamos_eliminados` (`id_prestamo`, `id_instrumento`, `email`, `fechaPeticion`, `proceso`, `fechaValidacion`, `usuario`, `fecha_eliminación`) VALUES
+(40, 1, 'messi@gmail.com', '2023-02-13 19:37:00', '-Seleccione su grado', '2023-02-13 19:38:00', 'root@localhost', '2023-02-13 19:38:38'),
+(41, 2, 'messi@gmail.com', '2023-02-13 19:38:00', 'validando peticion', NULL, 'root@localhost', '2023-02-22 09:43:40'),
+(39, 3, 'dilanicolas040@gmail.com', '2023-02-02 02:54:43', 'validando', NULL, 'root@localhost', '2023-03-06 22:56:19'),
+(42, 1, 'messi@gmail.com', '2023-02-13 19:57:00', 'validando peticion', NULL, 'root@localhost', '2023-03-21 00:55:40');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registrousuarios`
+--
+
+CREATE TABLE `registrousuarios` (
+  `nombre` varchar(25) NOT NULL,
+  `apellido` varchar(25) NOT NULL,
+  `Identificacion` int(11) DEFAULT NULL,
+  `grado` varchar(11) DEFAULT NULL,
+  `email` varchar(25) DEFAULT NULL,
+  `psw` varchar(30) DEFAULT NULL,
+  `insertado` datetime DEFAULT NULL,
+  `usuario` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `registrousuarios`
+--
+
+INSERT INTO `registrousuarios` (`nombre`, `apellido`, `Identificacion`, `grado`, `email`, `psw`, `insertado`, `usuario`) VALUES
+('1', '1', 1, '1', '1', '1', '2023-01-04 15:07:55', 'root@localhost'),
+('1', '1', 1, '1', 'messi@gmail.com', '123', '2023-01-05 13:43:48', 'root@localhost'),
+('nojno', 'se', 123, '1. Primero', 'remillos13@hotmail.com', 'jojij', '2023-01-05 13:45:32', 'root@localhost'),
+('dilannicolas', 'rojas', 1, '10. Décimo', 'xelipe.deje@gmail.com', '1', '2023-01-05 13:47:32', 'root@localhost'),
+('dilannicolas', 'rojas', 1, '10. Décimo', '.deje@gmail.com', '1', '2023-01-05 15:39:20', 'root@localhost'),
+('jose', 'rojas waltero', 12321, '2', 'messias@gmail.com', 'psw23', '2023-01-12 10:52:04', 'root@localhost'),
+('etrt', 'ohhuoh', 313, '-Seleccione', 'nose@gmail.com', 'jojij', '2023-01-12 11:43:33', 'root@localhost'),
+('3', '3', 3, '3', 'messi@gmail.com', '123', '2023-01-13 15:28:36', 'root@localhost'),
+('1', '11', 1, '11. Once', '1@gmail.com', '1', '2023-02-22 09:59:59', 'root@localhost'),
+('2', '22', 2, '2. Segundo', 'a@gmail.com', '22', '2023-02-22 10:01:48', 'root@localhost'),
+('1', '1', 1, '-Seleccione', '1@gmail.com', '1', '2023-03-06 12:06:15', 'root@localhost');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `textos`
+--
+
+CREATE TABLE `textos` (
+  `idTextos` int(11) NOT NULL,
+  `texto` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `textos`
+--
+
+INSERT INTO `textos` (`idTextos`, `texto`) VALUES
+(1, 'Semillas de cubarro...'),
+(2, 'La Escuela de Música el Semillas de Cubarro, se compromete a contribuir con la formación artística de sus usuarios y clientes a través de la ejecución de los programas en música, audio y cursos libres, cumpliendo con los requisitos aplicables a la prestación del servicio y requerimientos acordados con el cliente; contando para ello con talento humano competente, recursos físicos y tecnológicos adecuados, en busca de la mejora continua de su sistema de gestión de cantidad...'),
+(3, 'MISION...\r\nLa Escuela de Música Semillas de Cubarro , es una institución educativa para el trabajo y desarrollo humano, encaminada a la formación artística de sus usuarios y clientes a través de sus programas en música, audio y cursos libres con el fin de contribuir con su desarrollo personal, dentro de un mundo globalizado del arte, el entretenimiento y la recreación.'),
+(4, 'VISIÓN...\r\nLa Escuela de Música Semillas de Cubarro para el año 2024, será una institución educativa para el trabajo y el desarrollo humano, reconocida a nivel nacional por impartir programas y cursos libres, dirigidos a la formación artística en el ámbito de la Música, el Audio y obteniendo posicionamiento a nivel nacional e internacional a través de alianzas estratégicas que permitan a sus usuarios complementar sus estudios y proyectar su desarrollo personal.'),
+(5, 'Semillas de Cubarro vemos el arte como transformador social por lo que siempre buscamos inculcar y fortalecer los valores como el respeto, disciplina y compañerismo.\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `nombre` varchar(25) NOT NULL,
+  `apellido` varchar(25) NOT NULL,
+  `Identificacion` int(11) NOT NULL,
+  `foto` text NOT NULL,
+  `edad` int(11) NOT NULL,
+  `grado` varchar(11) NOT NULL,
+  `email` varchar(25) NOT NULL,
+  `psw` varchar(30) NOT NULL,
+  `id_cargo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`nombre`, `apellido`, `Identificacion`, `foto`, `edad`, `grado`, `email`, `psw`, `id_cargo`) VALUES
+('2', '22', 2, '', 22, '2. Segundo', 'a@gmail.com', '22', 2),
+('dilan', 'rojas', 1192738422, 'images/10603355_295073100678230_8967111516393852945_n.jpg', 20, 'noveno', 'dilanicolas040@gmail.com', 'psw23', 1),
+('messi', 'rowal', 3, 'images/Screenshot_20230113_194059_Gallery.jpg', 33, '3', 'messi@gmail.com', '123', 2);
+
+--
+-- Disparadores `usuarios`
+--
+DELIMITER $$
+CREATE TRIGGER `EliminacionDEusuarios` AFTER DELETE ON `usuarios` FOR EACH ROW INSERT INTO USUARIOS_ELIMINADOS(nombre,apellido,Identificacion,grado,email,psw,usuario,fecha_eliminación)
+VALUES(OLD.nombre,OLD.apellido,OLD.Identificacion,OLD.grado,OLD.email,OLD.psw ,current_user(),NOW())
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `registroDeUsuarios` AFTER INSERT ON `usuarios` FOR EACH ROW insert into registroUsuarios(nombre,apellido,Identificacion,grado,email,psw,insertado,usuario)
+values(new.nombre,new.apellido,new.Identificacion,new.grado,new.email,new.psw ,now(),current_user())
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios_eliminados`
+--
+
+CREATE TABLE `usuarios_eliminados` (
+  `nombre` varchar(25) NOT NULL,
+  `apellido` varchar(25) NOT NULL,
+  `Identificacion` int(11) DEFAULT NULL,
+  `grado` varchar(11) DEFAULT NULL,
+  `email` varchar(25) DEFAULT NULL,
+  `psw` varchar(30) DEFAULT NULL,
+  `usuario` varchar(20) DEFAULT NULL,
+  `fecha_eliminación` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios_eliminados`
+--
+
+INSERT INTO `usuarios_eliminados` (`nombre`, `apellido`, `Identificacion`, `grado`, `email`, `psw`, `usuario`, `fecha_eliminación`) VALUES
+('2', '2', 2, '-Seleccione', 'remillos13@hotmail.com', '2', 'root@localhost', '2023-01-04 15:29:36'),
+('1', 'ediar', 1, '1', '1', '1', 'root@localhost', '2023-01-05 13:46:45'),
+('1', '1', 1, '1. Primero', 'xelipe.deje@gmail.com', '1', 'root@localhost', '2023-01-05 13:47:24'),
+('nojno', 'se', 123, '1. Primero', 'remillos13@hotmail.com', 'jojij', 'root@localhost', '2023-01-12 11:44:41'),
+('etrt', 'ohhuoh', 313, '-Seleccione', 'nose@gmail.com', 'jojij', 'root@localhost', '2023-01-12 11:44:59'),
+('dilannicolas', 'rojas', 1, '10. Décimo', '.deje@gmail.com', '1', 'root@localhost', '2023-01-13 14:34:27'),
+('dilannicolas', 'rojas', 1, '10. Décimo', 'xelipe.deje@gmail.com', '1', 'root@localhost', '2023-01-13 14:38:12'),
+('jose', 'rojas waltero', 12321, '2', 'messias@gmail.com', 'psw23', 'root@localhost', '2023-01-13 14:38:16'),
+('shiara', 'lopez', 8262, 'octavo', 'messi@gmail.com', '123', 'root@localhost', '2023-01-13 14:41:57'),
+('1', '11', 1, '11. Once', '1@gmail.com', '1', 'root@localhost', '2023-02-22 10:24:37'),
+('1', '1', 1, '-Seleccione', '1@gmail.com', '1', 'root@localhost', '2023-03-06 22:34:19');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `cargo`
+--
+ALTER TABLE `cargo`
+  ADD PRIMARY KEY (`id_cargo`);
+
+--
+-- Indices de la tabla `instrumento`
+--
+ALTER TABLE `instrumento`
+  ADD PRIMARY KEY (`instrumentosNombre`);
+
+--
+-- Indices de la tabla `prestamos`
+--
+ALTER TABLE `prestamos`
+  ADD PRIMARY KEY (`id_prestamo`),
+  ADD KEY `instrumentosNombre` (`instrumentosNombre`),
+  ADD KEY `email` (`email`);
+
+--
+-- Indices de la tabla `textos`
+--
+ALTER TABLE `textos`
+  ADD PRIMARY KEY (`idTextos`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`email`),
+  ADD KEY `cargo_id` (`id_cargo`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `prestamos`
+--
+ALTER TABLE `prestamos`
+  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `prestamos`
+--
+ALTER TABLE `prestamos`
+  ADD CONSTRAINT `prestamos_ibfk_1` FOREIGN KEY (`instrumentosNombre`) REFERENCES `instrumento` (`instrumentosNombre`),
+  ADD CONSTRAINT `prestamos_ibfk_2` FOREIGN KEY (`email`) REFERENCES `usuarios` (`email`);
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `cargo` (`id_cargo`);
+COMMIT;

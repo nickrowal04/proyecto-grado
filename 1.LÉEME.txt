@@ -1,0 +1,34 @@
+Manual para la instalación en local de la aplicación web del Cubarro de oro 
+1.	Como primer pasó para la instalación en local debemos tener el XAMPP instalado y si no contamos con el programa de XAMPP lo instalamos link de descarga (https://www.apachefriends.org/es/index.html).
+2.	Previa mente no contamos con el XAMPP instalado debemos hacer unos pasos en la instalación de XAMPP en nuestros equipos, cuando el programa está instalando debemos descargar el paquete de Apache  y MySQL.
+3.	Suponiendo que ya tenemos el XAMPP en el navegador de preferencia escribimos en la dirección del sitio (el XAMPP tiene que estar iniciado) http://localhost/phpmyadmin/
+Y nos dirigimos a SQL (http://localhost/phpmyadmin/index.php?route=/server/sql).
+En este archivo se encuentra un block de notas que se tiene como nombre  1.BaseDeDatosCubarro todo lo que está en el bock de notas  y lo pegamos en (http://localhost/phpmyadmin/index.php?route=/server/sql). Cuando tengamos todo pegado pulsamos el botón de Continuar.
+4.	Ya en este paso tenemos la base de datos en nuestro dispositivo.
+5.	Como últimas indicaciones buscamos la carpeta de XAMPP que por lo general queda en el Disco local (c) ya que encontremos la carpeta de XAMPP la abrimos.
+6.	Ya que la hemos abierto buscamos la carpeta que dice htdocs y de igual manera abrimos la carpeta.
+7.	Ya que estamos en la carpeta de htdocs pegamos la carpeta de repositorio (si el archivo se encuentra comprimido descomprimir)
+8.	Y como último paso escribimos en nuestro navegador de confianza /localhost/repositorio/ o http://localhost /repositorio/ y listo la aplicación web esta lista para ser usada. 
+Para acceder al sitio de prestación de instrumentos como administrador. 
+Usuario: dilanicolas040@gmail.com
+Contraseña: psw23
+Para acceder al sitio de prestación de instrumentos como estudiante. 
+Usuario: messi@gmail.com
+Contraseña: 123
+
+Instalación para el aula virtual (Moodle)
+Todo debe ir en Disco local (c)
+1.	Para la instalación del moodle es mucho más sencillo porque todo se encuentra en la carpeta llamada moodle
+2.	Y solo iniciamos el moodle como se hace: le damos click en Start Moodle
+3.	Esperamos un momento que salga este mensaje: (Run "Stop Moodle.exe" in order to stop Moodle server.)
+4.	Ya teniendo el paso anterior realizado escribimos en nuestro navegador de confianza  local host (http://localhost/).
+5.	  Y listo estamos en nuestra aula virtual del Cubarro de oro 
+Para acceder al sitio de prestación de instrumentos como administrador. 
+Usuario: admin.
+Contraseña: Di738422!
+Para acceder al sitio de prestación de instrumentos como estudiante. 
+Usuario: loankun
+Contraseña: Ca123456!
+
+
+
